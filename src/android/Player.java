@@ -116,7 +116,7 @@ public class Player {
         }
 
         @Override
-        public void onTimelineChanged(Timeline timeline, Object manifest) {
+        public void onTimelineChanged(Timeline timeline, Object manifest, int temp) {
             JSONObject payload = Payload.timelineChangedEvent(Player.this.exoPlayer, timeline, manifest);
             new CallbackResponse(Player.this.callbackContext).send(PluginResult.Status.OK, payload, true);
         }
